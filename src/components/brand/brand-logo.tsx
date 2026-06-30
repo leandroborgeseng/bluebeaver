@@ -31,6 +31,7 @@ export function BrandLogo({
       alt="BlueBeaver"
       width={W}
       height={H}
+      unoptimized
       className={cn("object-contain object-left", sizeClass, className)}
       priority={priority}
       sizes="(max-width: 640px) 200px, 240px"
