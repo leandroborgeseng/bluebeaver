@@ -1,0 +1,30 @@
+# Coolify: não mapeie ports no host (ex.: "3000:3000") — o proxy gere o tráfego.
+# No painel, defina Porta exposta = 3000 e o domínio (FQDN) do serviço `web`.
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_CONTACT_EMAIL: ${NEXT_PUBLIC_CONTACT_EMAIL:-}
+        NEXT_PUBLIC_CONTACT_PHONES: ${NEXT_PUBLIC_CONTACT_PHONES:-}
+        NEXT_PUBLIC_CONTACT_ADDRESSES_JSON: ${NEXT_PUBLIC_CONTACT_ADDRESSES_JSON:-}
+        NEXT_PUBLIC_WHATSAPP_E164: ${NEXT_PUBLIC_WHATSAPP_E164:-}
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"require('http').get('http://127.0.0.1:3000/', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)}).on('error', () => process.exit(1))\"",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s

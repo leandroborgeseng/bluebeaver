@@ -20,7 +20,8 @@ Aplicação de produção alinhada a `process.env.PORT` (definida por plataforma
 
 - Manifesto: `public/manifest.json` — atalho para instalação futura e `theme-color`.
 - Evolução de service worker: comentado em `public/pwa/placeholder-service-worker.js`.
-- **Deploy (Railway, domínio, DNS e HTTPS)**: [RAILWAY.md](./RAILWAY.md).
+- **Deploy Coolify (Docker Compose)**: [COOLIFY.md](./COOLIFY.md).
+- **Deploy Railway**: [RAILWAY.md](./RAILWAY.md).
 
 O logotipo oficial está em `public/brand/bluebeaver-logo.png`. Cores da interface seguem a marca: azul `#0066B2`, verde de destaque `#28B400` (além do laranja CTA do layout).
 

@@ -1,0 +1,14 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+.next
+out
+.git
+.gitignore
+*.md
+.env*
+!.env.example
+.DS_Store
+coverage
+.vercel
