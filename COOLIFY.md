@@ -1,6 +1,6 @@
 # Deploy no Coolify (Docker Compose)
 
-Este repositório inclui `Dockerfile` (Next.js **standalone**) e `docker-compose.yml` prontos para o Coolify.
+Este repositório inclui `Dockerfile` (Next.js **standalone**) e `docker-compose.yaml` prontos para o Coolify.
 
 ## Pré-requisitos
 
@@ -13,7 +13,7 @@ Este repositório inclui `Dockerfile` (Next.js **standalone**) e `docker-compose
 1. **Project** → **Environment** → **+ Add Resource**
 2. **Public Repository** (ou GitHub App) → URL do repositório, branch `main`
 3. **Build Pack**: **Docker Compose**
-4. **Docker Compose location**: `docker-compose.yml` (raiz do repo)
+4. **Docker Compose location**: `docker-compose.yaml` (raiz do repo; o Coolify usa `.yaml` por omissão)
 5. **Base directory**: `/` (vazio)
 
 ## Rede e domínio
